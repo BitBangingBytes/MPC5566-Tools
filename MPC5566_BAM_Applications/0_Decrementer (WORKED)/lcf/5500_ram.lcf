@@ -1,0 +1,72 @@
+/* 5500_ram.lcf - Simple minimal MPC5500 link file using 32 KB SRAM */
+/* Aug 30 2007 initial version */
+/* May 09 208 SM: Put stack in it's own 1KB (0x400) memory segment */
+
+MEMORY
+{
+        init:           org = 0x40000000, len = 0x1000
+        interrupts_ram: org = 0x40001000, len = 0x1000
+        internal_ram:   org = 0x40002000, len = 0x1000
+        stack_ram:      org = 0x40003000, len = 0x0400
+}
+
+SECTIONS
+{
+
+	GROUP : {      
+	  .init_vle (VLECODE) : {
+	    *(.init)
+	    *(.init_vle)
+	  }
+	  .init  : {}
+	} > init
+  
+  GROUP : {
+      .ivor_branch_table    : {}              /* For MPC5516 core interrupts  */
+      .intc_hw_branch_table ALIGN (2048) : {} /* For INTC in HW Vector Mode   */
+      .ivor_handlers        : {}              /* Handlers for core interrupts */
+  } > interrupts_ram
+  
+   
+   GROUP : {
+    	.intc_sw_isr_vector_table : {} /* For INTC in SW Vector Mode */
+      .text : { 
+             *(.text)
+             *(.rodata)
+             *(.ctors)
+             *(.dtors)    
+             *(.init) 
+             *(.fini) 		
+             *(.eini)
+             . = (.+15);
+        } 
+	    .sdata2       : {}
+	    extab      : {}
+	    extabindex : {}
+	 }	 > internal_ram
+
+
+	GROUP : {
+	    .data  (DATA) : {} 
+	    .sdata (DATA) : {}
+	    .sbss  (BSS)  : {}
+	    .bss   (BSS)  : {}
+	} > internal_ram
+}   
+
+
+/* Freescale CodeWarrior compiler address designations */
+
+_stack_addr = ADDR(stack_ram)+SIZEOF(stack_ram);
+_stack_end  = ADDR(stack_ram);
+
+/* These are not currently being used
+_heap_addr  = ADDR(.bss)+SIZEOF(.bss);
+_heap_end   = ADDR(internal_ram)+SIZEOF(internal_ram);
+*/
+__IVPR_VALUE = ADDR(interrupts_ram);
+
+
+/* L2 SRAM Location (used for L2 SRAM initialization) */
+
+/* L2SRAM_LOCATION = 0x40000000; */

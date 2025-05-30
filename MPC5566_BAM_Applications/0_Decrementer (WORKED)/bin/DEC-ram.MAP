@@ -1,0 +1,341 @@
+Link map of __start
+  1] __start (func,global) found in __start.o 
+  1] >>> UNREFERENCED DUPLICATE __start
+  1] >>> (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+   2] __init_registers (func,weak) found in __start.o 
+   2] >>> UNREFERENCED DUPLICATE __init_registers
+   2] >>> (func,weak) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] _stack_addr found as linker generated symbol
+    3] _SDA2_BASE_ found as linker generated symbol
+    3] _SDA_BASE_ found as linker generated symbol
+   2] __init_hardware (func,global) found in __ppc_eabi_init.o 
+    3] usr_init (func,global) found in MPC55xx_init_debug.o 
+   2] __init_data (func,weak) found in __start.o 
+   2] >>> UNREFERENCED DUPLICATE __init_data
+   2] >>> (func,weak) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] _rom_copy_info (object,global) found in Linker Generated Symbol File 
+    3] __copy_rom_section (func,global) found in __start.o 
+    3] >>> UNREFERENCED DUPLICATE __copy_rom_section
+    3] >>> (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+     4] memcpy (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+     4] __flush_cache (func,global) found in __ppc_eabi_init.o 
+    3] _bss_init_info (object,global) found in Linker Generated Symbol File 
+    3] __init_bss_section (func,global) found in __start.o 
+    3] >>> UNREFERENCED DUPLICATE __init_bss_section
+    3] >>> (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+     4] memset (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+      5] __fill_mem (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+   2] __init_user (func,global) found in __ppc_eabi_init.o 
+   2] main (func,global) found in main.o 
+    3] initIrqVectors (func,global) found in main.o 
+     4] __IVPR_VALUE found as linker generated symbol
+     4] IVOR10Handler (notype,global) found in handlers.o 
+      5] _@DummyFn1 (func,local) found in handlers.o 
+       6] DECctr (object,global) found in main.o 
+       6] GPDI_83_ADDR (object,global) found in main.o 
+       6] GPDO_83_ADDR (object,global) found in main.o 
+      5] .ivor_handlers (section,local) found in handlers.o 
+    3] initDEC (func,global) found in main.o 
+   2] exit (func,weak) found in __ppc_eabi_init.o 
+    3] _ExitProcess (func,weak) found in __ppc_eabi_init.o 
+  1] @45 (object,local) found in __start.o 
+   2] @44 (object,local) found in __start.o 
+  1] @55 (object,local) found in __start.o 
+   2] @54 (object,local) found in __start.o 
+  1] @83 (object,local) found in __start.o 
+   2] @82 (object,local) found in __start.o 
+  1] @18 (object,local) found in main.o 
+   2] @17 (object,local) found in main.o 
+  1] __init_cpp_exceptions_reference (object,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+   2] __init_cpp_exceptions (func,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] fragmentID (object,local) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] __exception_info_constants (func,weak) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+     4] _eti_init_info (object,global) found in Linker Generated Symbol File 
+    3] __register_fragment (func,global) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+     4] fragmentinfo (object,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  1] __fini_cpp_exceptions_reference (object,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+   2] __fini_cpp_exceptions (func,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] __unregister_fragment (func,global) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  1] _ctors (notype,global) found in Linker Generated Symbol File 
+  1] _ctors$99 (object,global) found in Linker Generated Symbol File 
+  1] _dtors (notype,global) found in Linker Generated Symbol File 
+  1] _dtors$99 (object,global) found in Linker Generated Symbol File 
+    3] .init (section,local) found in __start.o 
+    3] .init.105 (notype,local) found in __start.o 
+    3] .text (section,local) found in main.o 
+    3] .text.23 (notype,local) found in main.o 
+    3] .init (section,local) found in MPC55xx_init_debug.o 
+    3] .init.8 (notype,local) found in MPC55xx_init_debug.o 
+    3] .text (section,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+    3] .text.1332 (notype,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+
+
+.init_vle section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 0001d8 40000000 00000140  1 .init 	__start.o 
+  00000000 000068 40000000 00000140  4 __start 	__start.o 
+  00000068 00006c 40000068 000001a8  4 __copy_rom_section 	__start.o 
+  000000d4 000044 400000d4 00000214  4 __init_bss_section 	__start.o 
+  00000118 00001c 40000118 00000258  4 __init_registers 	__start.o 
+  00000134 0000a4 40000134 00000274  4 __init_data 	__start.o 
+  000001d8 000000 400001d8 00000318  1 .init.105 	__start.o 
+  000001d8 000050 400001d8 00000318  1 .init 	__ppc_eabi_init.o 
+  000001d8 00001c 400001d8 00000318  4 __init_hardware 	__ppc_eabi_init.o 
+  000001f4 000034 400001f4 00000334  4 __flush_cache 	__ppc_eabi_init.o 
+  00000228 00000c 40000228 00000368  1 .init 	MPC55xx_init_debug.o 
+  00000228 00000c 40000228 00000368  4 usr_init 	MPC55xx_init_debug.o 
+  00000234 000000 40000234 00000374  1 .init.8 	MPC55xx_init_debug.o 
+  00000234 000134 40000234 00000374  1 .init 	Runtime.PPCEABI.S.UC.a __mem.o
+  00000234 000050 40000234 00000374  4 memcpy 	Runtime.PPCEABI.S.UC.a __mem.o
+  00000284 0000b4 40000284 000003c4  4 __fill_mem 	Runtime.PPCEABI.S.UC.a __mem.o
+  00000338 000030 40000338 00000478  4 memset 	Runtime.PPCEABI.S.UC.a __mem.o
+  00000368 000014 40000368 000004a8  1 .init 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000368 000014 40000368 000004a8  4 __exception_info_constants 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  UNUSED   000050 ........ ........    __find_exception_addresses Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  0000037c 00006c 4000037c 000004bc  1 .init 	Linker Generated Symbol File 
+  0000037c 000054 4000037c 000004bc  4 _rom_copy_info 	Linker Generated Symbol File 
+  000003d0 000018 400003d0 00000510  4 _bss_init_info 	Linker Generated Symbol File 
+
+
+.ivor_branch_table section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.intc_hw_branch_table section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.ivor_handlers section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000050 40001000 00000530  1 .ivor_handlers 	handlers.o 
+  00000000 000050 40001000 00000530  4 _@DummyFn1 	handlers.o 
+  00000000 000000 40001000 00000530    IVOR10Handler (entry of .ivor_handlers) 	handlers.o 
+
+
+.intc_sw_isr_vector_table section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000088 40002000 00000580  1 .text 	main.o 
+  00000000 000018 40002000 00000580  4 initIrqVectors 	main.o 
+  00000018 000024 40002018 00000598  4 initDEC 	main.o 
+  0000003c 00004c 4000203c 000005bc  4 main 	main.o 
+  00000088 000000 40002088 00000608  1 .text.23 	main.o 
+  00000088 000030 40002088 00000608  1 .text 	__ppc_eabi_init.o 
+  00000088 00000c 40002088 00000608  4 __init_user 	__ppc_eabi_init.o 
+  00000094 000020 40002094 00000614  4 exit 	__ppc_eabi_init.o 
+  000000b4 000004 400020b4 00000634  4 _ExitProcess 	__ppc_eabi_init.o 
+  000000b8 000060 400020b8 00000638  1 .text 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  000000b8 000034 400020b8 00000638  4 __register_fragment 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  000000ec 00002c 400020ec 0000066c  4 __unregister_fragment 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0000a4 ........ ........    ExPPC_FindExceptionFragment__FPcP12FragmentInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0001b0 ........ ........    ExPPC_FindExceptionRecord__FPcP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000008 ........ ........    ExPPC_PopR31__FPcP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000020 ........ ........    ExPPC_CurrentAction__FPC14ActionIterator Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000254 ........ ........    ExPPC_NextAction__FP14ActionIterator Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000198 ........ ........    ExPPC_PopStackFrame__FP12ThrowContextP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0009c4 ........ ........    ExPPC_UnwindStack__FP12ThrowContextP15MWExceptionInfoPv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000088 ........ ........    ExPPC_IsInSpecification__FPcP16ex_specification Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000100 ........ ........    __unexpected Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000040 ........ ........    __dt__Q23std13bad_exceptionFv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00002c ........ ........    ExPPC_LongJump__FP12ThrowContextPvPv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000080 ........ ........    ExPPC_HandleUnexpected__FP12ThrowContextP15MWExceptionInfoP16ex_specification Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000364 ........ ........    ExPPC_ThrowHandler__FP12ThrowContext Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00006c ........ ........    __throw Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00002c ........ ........    __end__catch Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0000d4 ........ ........    __uncaught_exception_helper__FP12ThrowContext Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00003c ........ ........    __uncaught_exception Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    what__Q23std13bad_exceptionCFv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  00000118 000000 40002118 00000698  1 .text.1332 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  00000118 000078 40002118 00000698  1 .text 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000118 000044 40002118 00000698  4 __init_cpp_exceptions 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  0000015c 000034 4000215c 000006dc  4 __fini_cpp_exceptions 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000190 000000 40002190 00000710  1 .ctors$00 	Linker Generated Symbol File 
+  00000190 000000 40002190 00000710  4 _ctors 	Linker Generated Symbol File 
+  00000190 000004 40002190 00000710  1 .ctors$10 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000190 000004 40002190 00000710  4 __init_cpp_exceptions_reference 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000194 000004 40002194 00000714  1 .ctors$99 	Linker Generated Symbol File 
+  00000194 000004 40002194 00000714  4 _ctors$99 	Linker Generated Symbol File 
+  00000198 000000 40002198 00000718  1 .dtors$00 	Linker Generated Symbol File 
+  00000198 000000 40002198 00000718  4 _dtors 	Linker Generated Symbol File 
+  00000198 000004 40002198 00000718  1 .dtors$15 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000198 000004 40002198 00000718  4 __fini_cpp_exceptions_reference 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  0000019c 000004 4000219c 0000071c  1 .dtors$99 	Linker Generated Symbol File 
+  0000019c 000004 4000219c 0000071c  4 _dtors$99 	Linker Generated Symbol File 
+
+
+.sdata2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+extab section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000018 400021b0 00000730  1 extab 	__start.o 
+  00000000 000008 400021b0 00000730  4 @44 	__start.o 
+  00000008 000008 400021b8 00000738  4 @54 	__start.o 
+  00000010 000008 400021c0 00000740  4 @82 	__start.o 
+  00000018 000008 400021c8 00000748  1 extab 	main.o 
+  00000018 000008 400021c8 00000748  4 @17 	main.o 
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.data section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.sdata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 40002230 000007b0  1 .sdata 	main.o 
+  00000000 000004 40002230 000007b0  4 GPDI_83_ADDR 	main.o 
+  00000004 000004 40002234 000007b4  4 GPDO_83_ADDR 	main.o 
+  00000008 000004 40002238 000007b8  1 .sdata 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000008 000004 40002238 000007b8  4 fragmentID 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+
+
+.sbss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000004 40002240 000007c0  1 .sbss 	main.o 
+  00000000 000004 40002240 000007c0  4 DECctr 	main.o 
+
+
+.bss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00000c 40002248 000007c0  1 .bss 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  00000000 00000c 40002248 000007c0  4 fragmentinfo 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00000c 400021d0 000007b0  4 @45 	__start.o 
+  0000000c 00000c 400021dc 000007b0  4 @55 	__start.o 
+  00000018 00000c 400021e8 000007b0  4 @83 	__start.o 
+  00000024 00000c 400021f4 000007b0  4 @18 	main.o 
+  00000030 000030 40002200 000007b0  4 _eti_init_info 	Linker Generated Symbol File 
+  UNUSED   00000c ........ ........    @214 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @290 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @380 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @436 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @910 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @931 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @971 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @987 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1006 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1150 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1222 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1229 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+
+
+Memory map:
+                       Starting Size     File        S-Record Bin File Bin File
+                       address           Offset      Line     Offset   Name
+             .init_vle 40000000 00000000 00000140           0 00000000 DEC-ram.bin
+                 .init 40000000 000003e8 00000140           2 00000000 DEC-ram.bin
+        .ivor_handlers 40001000 00000050 00000530          52 00001000 DEC-ram.bin
+                 .text 40002000 000001b0 00000580          56 00002000 DEC-ram.bin
+               .sdata2 400021b0 00000000 00000730           0 00000000 DEC-ram.bin
+                 extab 400021b0 00000020 00000730          78 000021b0 DEC-ram.bin
+            extabindex 400021d0 00000060 00000750          80 000021d0 DEC-ram.bin
+                 .data 40002230 00000000 000007b0           0 00000000 DEC-ram.bin
+                .sdata 40002230 0000000c 000007b0          85 00002230 DEC-ram.bin
+                 .sbss 40002240 00000004 000007c0           0 00002240 DEC-ram.bin
+                  .bss 40002248 0000000c 000007c0           0 00002248 DEC-ram.bin
+      .PPC.EMB.apuinfo 000032e8 00000000 00003ab0           0 00000000 DEC-ram.bin
+         .debug_abbrev          00000179 000007c0
+           .debug_info          00000f43 00000939
+        .debug_aranges          00000020 0000187c
+           .debug_line          00001349 0000189c
+            .debug_loc          000003d5 00002be5
+       .debug_pubnames          00000281 00002fba
+
+
+Linker generated symbols:
+             __IVPR_VALUE 40001000
+              _f_init_vle 40000000
+          _f_init_vle_rom 40000000
+              _e_init_vle 40000000
+                  _f_init 40000000
+              _f_init_rom 40000000
+                  _e_init 400003e8
+     _f_ivor_branch_table 40001000
+ _f_ivor_branch_table_rom 40001000
+     _e_ivor_branch_table 40001000
+  _f_intc_hw_branch_table 40001000
+_f_intc_hw_branch_table_rom 40001000
+  _e_intc_hw_branch_table 40001000
+         _f_ivor_handlers 40001000
+     _f_ivor_handlers_rom 40001000
+         _e_ivor_handlers 40001050
+_f_intc_sw_isr_vector_table 40002000
+_f_intc_sw_isr_vector_table_rom 40002000
+_e_intc_sw_isr_vector_table 40002000
+                  _f_text 40002000
+              _f_text_rom 40002000
+                  _e_text 400021b0
+                _f_sdata2 400021b0
+            _f_sdata2_rom 400021b0
+                _e_sdata2 400021b0
+                  _fextab 400021b0
+              _fextab_rom 400021b0
+                  _eextab 400021d0
+             _fextabindex 400021d0
+         _fextabindex_rom 400021d0
+             _eextabindex 40002230
+                  _f_data 40002230
+              _f_data_rom 40002230
+                  _e_data 40002230
+                 _f_sdata 40002230
+             _f_sdata_rom 40002230
+                 _e_sdata 4000223c
+                  _f_sbss 40002240
+                  _e_sbss 40002244
+                   _f_bss 40002248
+                   _e_bss 40002254
+              _stack_addr 40003400
+               _stack_end 40003000
+               _heap_addr 003cfff0
+                _heap_end 003d7ff0
+             _nbfunctions 00000017
+           SIZEOF_HEADERS 00000140
+               _SDA_BASE_ 4000a230
+              _SDA2_BASE_ 4000a1b0
+           _ABS_SDA_BASE_ 4000a230
+          _ABS_SDA2_BASE_ 4000a1b0

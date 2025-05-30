@@ -1,0 +1,9 @@
+; FlexCAN_run_from_ram.mac file Aug 12 2006 S.M.
+; Script file for P&E Micro debugger for Decrementer example
+
+hload ..\bin\FlexCAN-RAM.elf   ; load program
+gotil main      ; run until main
+clearvar        ; Clear any previous variable display
+var RxDATA[0]
+
+

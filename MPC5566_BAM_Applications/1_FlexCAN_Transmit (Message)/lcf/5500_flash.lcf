@@ -1,0 +1,72 @@
+/* 5500_flash.lcf - Simple minimal MPC5500 link file using 32 KB SRAM */
+/* Sept 20 2007 SM, DF initial version */
+/* May 09 208 SM: Put stack in it's own 1KB (0x400) memory segment */
+
+MEMORY
+{
+    boot_flash:           org = 0x00000000,   len = 0x00010000
+    interrupts_flash:     org = 0x00010000,   len = 0x00010000
+    internal_flash:       org = 0x00020000,   len = 0x00060000 
+    internal_ram:         org = 0x40000000,   len = 0x00007C00 
+    stack_ram:            org = 0x40007C00,   len = 0x0400
+}
+
+/* This will ensure the rchw and reset vector are not stripped by the linker */
+FORCEACTIVE { "bam_rchw" "bam_resetvector"}
+
+
+SECTIONS
+{
+  .boot LOAD (0x00000000) : {} > boot_flash  /* LOAD (0x0) prevents relocation by ROM copy during startup */
+
+   GROUP : {                /* Note: _e_ prefix enables load after END of that specified section */
+      .ivor_branch_table (TEXT) LOAD (ADDR(interrupts_flash)) : {}
+      .intc_hw_branch_table (TEXT) LOAD (_e_ivor_branch_table) ALIGN (0x800) : {}
+      .ivor_handlers (TEXT) LOAD (_e_intc_hw_branch_table) : {} /* Each MPC555x handler require 16B alignmt */
+   } > interrupts_flash
+  
+   
+   GROUP : {
+    	.intc_sw_isr_vector_table ALIGN (2048) : {} /* For INTC in SW Vector Mode */
+      .text : { 
+             *(.text)
+             *(.rodata)
+             *(.ctors)
+             *(.dtors)    
+             *(.init) 
+             *(.fini) 		
+             *(.eini)
+             . = (.+15);
+        } 
+	    .sdata2       : {}
+	    extab      : {}
+	    extabindex : {}
+	 }	 > internal_flash
+
+
+	GROUP : {
+	    .data  (DATA) : {} 
+	    .sdata (DATA) : {}
+	    .sbss  (BSS)  : {}
+	    .bss   (BSS)  : {}
+      .PPC.EMB.sdata0 : {}
+      .PPC.EMB.sbss0  : {}
+	} > internal_ram
+}   
+
+
+/* Freescale CodeWarrior compiler address designations */
+
+_stack_addr = ADDR(stack_ram)+SIZEOF(stack_ram);
+_stack_end  = ADDR(stack_ram);
+
+/* These are not currently being used
+_heap_addr  = ADDR(.bss)+SIZEOF(.bss);
+_heap_end   = ADDR(internal_ram)+SIZEOF(internal_ram);
+*/
+__IVPR_VALUE = ADDR(interrupts_flash);
+
+
+/* L2 SRAM Location (used for L2 SRAM initialization) */
+
+L2SRAM_LOCATION = 0x40000000;

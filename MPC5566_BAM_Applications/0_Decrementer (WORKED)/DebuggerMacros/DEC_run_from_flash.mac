@@ -1,0 +1,10 @@
+; DEC_run_from_flash.mac file June 13 2007 S.M.
+; Script file for P&E Micro debugger for Decrementer example
+; Assumes MMU and SRAM init occurred by other scripts
+
+hloadmap ..\bin\DEC-flash.elf   ; load program debug symbols
+gotil main      ; run until main
+clearvar        ; Clear any previous variable display
+var DECctr      ; display variable DECctr
+
+

@@ -1,0 +1,77 @@
+; DEC_run_from_ram.cmm -initializes 5500 and downloads symbols
+; Initial Rev S.M. April 19, 2004
+; Rev SM Jan 18 2005- Sys.BdmClock line added; SYS.OPTION VECTORS deleted  
+
+;winclear
+Sys.Down
+Sys.BdmClock 3000000.
+Sys.Up
+
+; ** INITIALIZE MMU TO BAM SETTINGS (R. Dees 12-10-03) **
+; Periph B Modules MMU entry:  Base address = 0xFFF0_0000,
+; TLB0, 1 MByte Memory Space, Guarded, Don't Cache, All Access
+MMU.TLBSET 0 0xC0000500 0xFFF0000A 0xFFF0003F
+;
+; Internal SRAM MMU entry: Base address = 0x4000_0000,
+; TLB3, 256 KByte Memory Space, Not Guarded, Don't Cache, All Access
+MMU.TLBSET 3 0xC0000400 0x40000008 0x4000003F
+;
+; Periph A Modules MMU entry: Base address = 0xC3F0_0000,
+; TLB4, 1 MByte Memory Space, Not Guarded, Don't Cache, All Access
+MMU.TLBSET 4 0xC0000500 0xC3F00008 0xC3F0003F 
+;
+; Internal Flash MMU entry: Base address = 0x0000_0000,
+; TLB1, 16 MByte Memory Space, Not Guarded, Cachable, All Access
+MMU.TLBSET 1 0xC0000700 0x00000000 0x0000003F 
+;
+; External Memory MMU entry: Base address = 0x2000_0000,
+; TLB2, 16 MByte Memory Space, Not Guarded, Cachable, All Access
+MMU.TLBSET 2 0xC0000700 0x20000000 0x2000003F 
+;
+; External Memory (SRAM) MMU entry: Base address = 0x3000_0000,
+; TLB5, 4 MByte Memory Space, Not Guarded, Cachable, All Access
+MMU.TLBSET 5 0xC0000600 0x3ff00000 0x3ff0003F 
+
+; ** INITIALIZE ALL L2SRAM (SETS ECC BITS) **
+data.set a:0x40000000--0x4000FFFF %quad 0xaaaa555588887777
+
+; ** DOWNLOAD PROGRAM, RUN FROM _start TO main, DISPLAY WINDOWS **
+DATA.LOAD.elf ..\bin\DEC-ram.elf
+R.S IP _start
+go main
+do t32windows.cmm ;Set up windows per t32windows file
+
+MODE.HLL             ; Display mode is HLL, not mixed mode
+
+enddo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
